@@ -9,7 +9,10 @@ const Content = () => {
         </span>
       </header>
       <main id="Main">
-        <textarea id="TextArea" />
+        <textarea
+          id="TextArea"
+          placeholder="Escreva aqui"
+        />
         <button id="Button">
           Botão
         </button>
