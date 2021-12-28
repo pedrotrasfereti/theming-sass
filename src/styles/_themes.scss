@@ -1,0 +1,116 @@
+@import './colors';
+
+/*-==================== TEMAS ====================-*/
+/*
+  Aqui você pode definir as cores, tamanhos, espaçamentos, URLs
+  e o que mais quiser dos seus temas. Nesse caso, estamos criando
+  apenas duas paletas de cores, mas você poderia criar um tema
+  para alguma data especial, por exemplo. Para evitar problemas:
+
+  1. Os mapas dos temas devem possuir o mesmo número de propriedades,
+    com os mesmos nomes;
+
+  2. Coloque apenas o necessário, ou seja, aquilo que tenha valores
+    diferentes para cada tema;
+*/
+
+$light: (
+  bg: $white-lilac,
+  bg2: $white-lilac,
+  bg3: $whisper,
+  heading: $big-stone,
+  text: $big-stone,
+  primary: $azure,
+  shadow: $ghost,
+);
+
+$dark: (
+  bg: $rhino,
+  bg2: $big-stone,
+  bg3: $east-bay,
+  heading: $anakiwa,
+  text: $white-lilac,
+  primary: $dodger-blue,
+  shadow: $big-stone,
+);
+
+// Mapa dos temas
+$themes: (
+  light: $light,
+  dark: $dark,
+);
+
+/*-==================== MIXIN ====================-*/
+@mixin themify() {
+  @each $theme, $map in $themes {
+    .theme--#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function t($key) {
+  @return map-get($theme-map, $key);
+}
+
+/*-=========================== EXPLICAÇÃO ===========================-
+
+  * O mixin "themify" percorre todos os temas definidos em "themes"
+    e para cada um define um mapa global chamado de $theme-map.
+
+  * Ele pega o bloco do código que você inseriu e o entrega com a
+    diretriz @content.
+
+  * Os valores se tornam acessíveis através da classe ".theme--" +
+    <nome_do_tema>.
+
+  * Os valores individuais das propriedades podem ser resgatados
+    através do map-get, na função t().
+  
+  -======================== UTILIZANDO O TEMA ========================-
+
+  Cada vez que você quiser usar um tema, chame o mixin com @include
+  themify() e dentro dele use a função t() em torno de sua chave.
+
+  --> Você pode ver um exemplo disso em `src/styles/App.scss` <--
+
+  * Quando devo utilizar o mixin?
+
+    Quando uma propriedade, seja ela uma cor, tamanho, espaçamento ou
+    url de um recurso, seja diferente nesses dois ou mais temas.
+
+  -===================================================================-
+  Todos os termos abaixo podem ser alterados para satisfazer as suas
+  necessidades:
+
+  1. `themify`: Representa o nome do mixin que será importado.
+
+  2. `theme--`: Será a string que precede o nome do seu tema na classe
+                criada pelo mixin (Ex.: className="theme--light").
+
+  3. `t`: A função que receberá uma propriedade e resgatará o seu valor
+          dentro de um dos mapas/temas.
+
+-===================================================================-*/
+
+/*-==================== CHAVES ====================-*/
+/*
+  Para não correr o risco de escrever o nome das propriedades
+  errado, pode-se utilizar as variáveis abaixo quando utilizar
+  o mixin!
+*/
+$bg: 'bg';
+$bg2: 'bg2';
+$bg3: 'bg3';
+$text: 'text';
+$primary: 'primary';
+$secondary: 'secondary';
+$tertiary: 'tertiary';
+$buttonText: 'buttonText';
+$shadow: 'shadow';

@@ -1,0 +1,169 @@
+// Importando as funções
+@import './themes';
+
+#App {
+  background: $white;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  #List {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    .Item {
+      width: 17em;
+      border: 0;
+      border-radius: 1em;
+      display: flex;
+
+      .Heading {
+        // Propriedades que variam com o tema
+        @include themify() {
+          color: t('heading'); // Buscar pelo valor 'heading'
+        }
+
+        font: 600 1em Montserrat, sans-serif;
+        letter-spacing: .03em;
+      }
+    }
+
+    #SwitchContainer {
+      @include themify() {
+        background: t($bg); // Buscar pelo valor 'bg'
+      }
+
+      align-items: center;
+      justify-content: space-between;
+      height: 3.75em;
+      padding: 0 1.8em;
+      margin-bottom: 1.5em;
+
+      #Switch {
+        position: relative;
+        display: inline-block;
+        width: 3em;
+        height: 1.75em;
+
+        #Slider {
+          @include themify() {
+            background: t($shadow);
+          }
+
+          cursor: pointer;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          -webkit-transition: .4s;
+          transition: .4s;
+          border-radius: 5em;
+
+          // Slider Ball
+          &:before {
+            content: "";
+            background: $white;
+            position: absolute;
+            height: 1.7em;
+            width: 1.7em;
+            -webkit-transition: .4s;
+            transition: .4s;
+            border-radius: 50%;
+
+            @include themify() {
+              box-shadow: 0 0 6px t($shadow);
+            }
+          }
+        }
+
+        // Hide Default Checkbox
+        #Checkbox {
+          opacity: 0;
+          width: 0;
+          height: 0;
+        }
+        
+        // Slider Animation
+        #Checkbox:checked + #Slider:before {
+          -webkit-transform: translateX(1.3em);
+          -ms-transform: translateX(1.3em);
+          transform: translateX(1.3em);
+        }
+      }
+    }
+
+    #Content {
+      flex-flow: column nowrap;
+
+      #Header {
+        @include themify() {
+          background: t($bg);
+          box-shadow: 0 4px 2px -2px t($shadow);
+        }
+
+        display: flex;
+        align-items: center;
+        border: 0;
+        border-radius: 1em 1em 0 0;
+        padding: 0 1.8em;
+        height: 3.75em;
+        z-index: 1;
+      }
+
+      #Main {
+        @include themify() {
+          background: t($bg);
+        }
+
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        height: 11.25em;
+        border: 0;
+        border-radius: 0 0 1em 1em;
+        padding: 0 1em;
+
+        #TextArea {
+          @include themify() {
+            color: t($text);
+            background: t($bg3);
+          }
+
+          font: 400 1em Lato, sans-serif;
+          appearance: none;
+          border: none;
+          border-radius: 1em;
+          display: block;
+          height: 5.25rem;
+          margin-bottom: 1em;
+          padding: 1em;
+          resize: none;
+          width: 100%;
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        #Button {
+          @include themify() {
+            background: t($primary);
+          }
+
+          font: 600 1em Montserrat, sans-serif;
+          cursor: pointer;
+          color: $white;
+          width: 100%;
+          height: 3.25em;
+          border: 0;
+          border-radius: 1em;
+        }
+      }
+    }
+  }
+}
