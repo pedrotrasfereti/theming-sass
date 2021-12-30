@@ -24,6 +24,14 @@
         // Propriedades que variam com o tema
         @include themify() {
           color: t('heading'); // Buscar pelo valor 'heading'
+
+          /*
+            (Opcional): Deixar a transição entre as cores
+            dos temas mais suave. Adicione dentro do mixin
+            onde achar necessário!
+          */
+          -webkit-transition: .4s;
+          transition: .4s;
         }
 
         font: 600 1em Montserrat, sans-serif;
@@ -34,6 +42,14 @@
     #SwitchContainer {
       @include themify() {
         background: t($bg); // Buscar pelo valor 'bg'
+
+        /*
+          (Opcional): Deixar a transição entre as cores
+          dos temas mais suave. Adicione dentro do mixin
+          onde achar necessário!
+        */
+        -webkit-transition: .4s;
+        transition: .4s;
       }
 
       align-items: center;
@@ -103,6 +119,8 @@
         @include themify() {
           background: t($bg);
           box-shadow: 0 4px 2px -2px t($shadow);
+          -webkit-transition: .4s;
+          transition: .4s;
         }
 
         display: flex;
@@ -117,6 +135,8 @@
       #Main {
         @include themify() {
           background: t($bg);
+          -webkit-transition: .4s;
+          transition: .4s;
         }
 
         display: flex;
@@ -132,6 +152,8 @@
           @include themify() {
             color: t($text);
             background: t($bg3);
+            -webkit-transition: .4s;
+            transition: .4s;
           }
 
           font: 400 1em Lato, sans-serif;
@@ -153,6 +175,8 @@
         #Button {
           @include themify() {
             background: t($primary);
+            -webkit-transition: .4s;
+            transition: .4s;
           }
 
           font: 600 1em Montserrat, sans-serif;
