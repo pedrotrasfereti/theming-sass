@@ -41,6 +41,24 @@ $themes: (
 );
 
 /*-==================== MIXIN ====================-*/
+/*
+  Um mixin é essencialmente um gerador de código CSS que pode
+  ser reutilizado nos seus arquivos Sass. Ele pode ser entendido
+  como uma classe com superpoderes, capaz de receber argumentos
+  ou até mesmo outros mixins. Para exemplar, criei o seguinte mixin
+  utilizado para suavizar a transição entre temas.
+*/
+
+@mixin smooth() {
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+/*
+  O próximo mixin é o que será usado para percorrer os temas no nosso
+  mapa e criar um bloco de estilo para cada um.
+*/
+
 @mixin themify() {
   @each $theme, $map in $themes {
     .theme--#{$theme} & {

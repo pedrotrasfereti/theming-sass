@@ -30,8 +30,7 @@
             dos temas mais suave. Adicione dentro do mixin
             onde achar necessário!
           */
-          -webkit-transition: .4s;
-          transition: .4s;
+          @include smooth();
         }
 
         font: 600 1em Montserrat, sans-serif;
@@ -48,8 +47,7 @@
           dos temas mais suave. Adicione dentro do mixin
           onde achar necessário!
         */
-        -webkit-transition: .4s;
-        transition: .4s;
+        @include smooth();
       }
 
       align-items: center;
@@ -86,9 +84,8 @@
             position: absolute;
             height: 1.7em;
             width: 1.7em;
-            -webkit-transition: .4s;
-            transition: .4s;
             border-radius: 50%;
+            @include smooth();
 
             @include themify() {
               box-shadow: 0 0 6px t($shadow);
@@ -119,8 +116,7 @@
         @include themify() {
           background: t($bg);
           box-shadow: 0 4px 2px -2px t($shadow);
-          -webkit-transition: .4s;
-          transition: .4s;
+          @include smooth();
         }
 
         display: flex;
@@ -135,8 +131,7 @@
       #Main {
         @include themify() {
           background: t($bg);
-          -webkit-transition: .4s;
-          transition: .4s;
+          @include smooth();
         }
 
         display: flex;
@@ -152,8 +147,7 @@
           @include themify() {
             color: t($text);
             background: t($bg3);
-            -webkit-transition: .4s;
-            transition: .4s;
+            @include smooth();
           }
 
           font: 400 1em Lato, sans-serif;
@@ -175,8 +169,7 @@
         #Button {
           @include themify() {
             background: t($primary);
-            -webkit-transition: .4s;
-            transition: .4s;
+            @include smooth();
           }
 
           font: 600 1em Montserrat, sans-serif;
