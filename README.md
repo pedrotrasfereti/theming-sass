@@ -10,7 +10,6 @@ Nesse repositório de exemplo, você encontra todos os detalhes relevantes em fo
   <img
     src="website.gif"
     alt="Imagem animada do website"
-    style="width: 300px;"
   />
 </p>
 
