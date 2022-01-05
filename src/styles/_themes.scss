@@ -12,6 +12,11 @@
 
   2. Coloque apenas o necessário, ou seja, aquilo que tenha valores
     diferentes para cada tema;
+
+  Por recomendação, procure escolher de 10 a 16 tons de cor que podem
+  ser divididos em três categorias principais: claros, escuros e
+  coloridos. Deve ser possível utilizar essas cores tanto no tema claro
+  quanto escuro, sem a necessidade de cores exclusivas para cada tema.
 */
 
 $light: (
@@ -43,10 +48,10 @@ $themes: (
 /*-==================== MIXIN ====================-*/
 /*
   Um mixin é essencialmente um gerador de código CSS que pode
-  ser reutilizado nos seus arquivos Sass. Ele pode ser entendido
-  como uma classe com superpoderes, capaz de receber argumentos
-  ou até mesmo outros mixins. Para exemplar, criei o seguinte mixin
-  utilizado para suavizar a transição entre temas.
+  ser reutilizado nos seus arquivos Sass com a palavra @include.
+  Ele pode ser entendido como uma classe com superpoderes, capaz de
+  receber argumentos ou até mesmo outros mixins. Para exemplificar,
+  criei esse mixin para ter uma transição suave entre os temas.
 */
 
 @mixin smooth() {
@@ -120,8 +125,7 @@ $themes: (
 /*-==================== CHAVES ====================-*/
 /*
   Para não correr o risco de escrever o nome das propriedades
-  errado, pode-se utilizar as variáveis abaixo quando utilizar
-  o mixin!
+  errado, pode-se utilizar as variáveis abaixo quando chamar a função t.
 */
 $bg: 'bg';
 $bg2: 'bg2';
