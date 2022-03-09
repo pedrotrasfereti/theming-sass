@@ -22,7 +22,9 @@ Welcome to my theming with Sass (**SCSS**) Guide! Here you can find information 
 
 </div>
 
-This simple **React.js** application is a complement to the step-by-step [tutorial](https://www.linkedin.com/posts/pedro-trasfereti_react-frontend-css-activity-6884514435696754688-WUgZ) posted on my LinkedIn, which you can find inside the `slides` directory. All important information and abstractions can be found in the form of comments in the SCSS and TSX files. Feel free to send questions or suggestions my way, in case you have any!
+This simple **React.js** application is a complement to the step-by-step [tutorial][linkedin-post-url] posted on my LinkedIn, which you can find inside the `slides` directory. All important information and abstractions can be found in the form of comments in the SCSS and TSX files. Feel free to send questions or suggestions my way, in case you have any!
+
+The deployed project will be available [**here**][deploy-url].
 
 <br />
 
@@ -35,6 +37,7 @@ List of major frameworks/libraries used to bootstrap this project:
 * [React.js](https://reactjs.org/)
 * [Sass](https://sass-lang.com/)
 * [Vite](https://vitejs.dev/)
+* [Vercel](https://vercel.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -130,4 +133,6 @@ List of resources I find helpful and would like to give credit to:
 [issues-url]: https://github.com/pedrotrasfereti/theming-sass/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/pedro-trasfereti/
+[linkedin-post-url]: https://www.linkedin.com/posts/pedro-trasfereti_react-frontend-css-activity-6884514435696754688-WUgZ
 [product-screenshot]: website.gif
+[deploy-url]: https://theming-sass-pedrotrasfereti.vercel.app/
